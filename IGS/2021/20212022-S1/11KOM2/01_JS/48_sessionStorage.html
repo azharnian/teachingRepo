@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Store in sessionStorage</title>
+	<script type="text/javascript">
+
+	if(!sessionStorage.getItem('counter')) {
+		sessionStorage.setItem('counter', 0)
+	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+
+		document.querySelector('#counter').innerHTML = sessionStorage.getItem('counter');
+
+		document.querySelector('button').onclick = () => {
+
+			let counter = sessionStorage.getItem('counter');
+			counter++;
+
+			document.querySelector("#counter").innerHTML = counter;
+			sessionStorage.setItem('counter', counter);
+
+		}
+
+	})
+		
+	</script>
+</head>
+<body>
+	<h1 id="counter"></h1>
+	<button>Click!</button>
+</body>
+</html>

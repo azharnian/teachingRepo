@@ -1,0 +1,4 @@
+{
+	"admin" : {"password" : "12345"},
+	"superadmin" : {"password"  : "12345"}
+}

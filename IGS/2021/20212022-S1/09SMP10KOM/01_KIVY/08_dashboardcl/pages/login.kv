@@ -1,0 +1,105 @@
+#:import from_hex kivy.utils.get_color_from_hex
+
+Screen:
+	name: "login"
+	MDFloatLayout:
+		md_bg_color: 1,1,1,1
+		Image:
+			source: "assets/img/igs.png"
+			size_hint: (.25, .25)
+			pos_hint: {"center_x":.5, "center_y":.8}
+
+
+		MDLabel:
+			text: "Selamat Datang"
+			font_size: "25sp"
+			font_name: "Roboto"
+			color: from_hex("#101216")
+			pos_hint: {"center_x":.75, "center_y": .63}
+
+
+		MDFloatLayout:
+			size_hint: .8, .08
+			pos_hint: {"center_x":.5, "center_y":.5}
+
+			MDLabel:
+				text: "Username"
+				font_size: "14sp"
+				pos_hint: {"center_x": .5, "center_y": .7}
+				background_color: 0,0,0,0
+			TextInput:
+				size_hint: 1, .75
+				font_name: "Roboto"
+				pos_hint: {"center_x": .5, "center_y": .2}
+				font_size: "18sp"
+				background_color: 0,0,0,0
+				foreground_color: 0,0,0,1
+				multiline: False
+				write_tab: False
+			MDIcon:
+				icon: "account"
+				font_size: "30sp"
+				pos_hint: {"center_x":1.4, "center_y": .4}
+
+			MDFloatLayout:
+				pos_hint: {"center_x":.5, "center_y":0}
+				size_hint: 1, .03
+				md_bg_color: from_hex("101216")
+
+
+		MDFloatLayout:
+			size_hint: .8, .08
+			pos_hint: {"center_x":.5, "center_y":.4}
+
+			MDLabel:
+				text: "Password"
+				font_size: "14sp"
+				pos_hint: {"center_x": .5, "center_y": .7}
+				background_color: 0,0,0,0
+			TextInput:
+				size_hint: 1, .75
+				font_name: "Roboto"
+				pos_hint: {"center_x": .5, "center_y": .2}
+				font_size: "18sp"
+				background_color: 0,0,0,0
+				foreground_color: 0,0,0,1
+				multiline: False
+				write_tab: False
+				password: True
+			MDIcon:
+				icon: "key"
+				font_size: "30sp"
+				pos_hint: {"center_x":1.4, "center_y": .4}
+
+			MDFloatLayout:
+				pos_hint: {"center_x":.5, "center_y":0}
+				size_hint: 1, .03
+				md_bg_color: from_hex("101216")
+
+		Button:
+			text: "Masuk"
+			size_hint: .3, .08
+			pos_hint: {"center_x": .5, "center_y":.2}
+			background_color: 0,0,0,0
+			font_name: "Roboto"
+			font_size: "18sp"
+			bold: True
+			canvas.before:
+				Color:
+					rgb: 202/255, 0, 13/255, 1
+				RoundedRectangle:
+					size: self.size
+					pos: self.pos
+					radius: [25]
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<div class="content-section">
+		<div class="media">
+			<img class="rounded-circle account-img" src="{{ image_file }}">
+			<div class="media-body">
+				<h2 class="account-heading">
+					{{ current_user.username }}
+				</h2>
+				<p class="text-secondary">
+					{{ current_user.email }}
+				</p>
+			</div>
+		</div>
+
+		<form method="POST" action="" enctype="multipart/form-data">
+			{{ form.hidden_tag() }}
+			<fieldset class="form-group" style="padding: 5px;">
+
+				<div class="form-group">
+				    {{ form.username.label }}
+
+				    {% if form.username.errors %}
+
+				    	{{ form.username(class="form-control form-control-lg is-invalid") }}
+
+				    	{% for error in form.username.errors %}
+				    	<div class="invalid-feedback">
+				    		<span>{{ error }}</span>
+				    	</div>
+				    	{% endfor %}
+
+				    {% else %}
+
+				    	{{ form.username(class="form-control form-control-lg") }}
+
+				    {% endif %}
+				</div>
+
+				<div class="form-group">
+				    {{ form.email.label }}
+				    {% if form.email.errors %}
+
+				    	{{ form.email(class="form-control form-control-lg is-invalid") }}
+
+				    	{% for error in form.email.errors %}
+					    	<div class="invalid-feedback">
+					    		<span>{{ error }}</span>
+					    	</div>
+				    	{% endfor %}
+
+				    {% else %}
+
+				    	{{ form.email(class="form-control form-control-lg") }}
+
+				    {% endif %}
+				</div>
+
+				<div class="form-group">
+				    {{ form.picture.label }}
+				    {% if form.picture.errors %}
+
+				    	{{ form.picture(class="form-control-file is-invalid") }}
+
+				    	{% for error in form.picture.errors %}
+					    	<div class="invalid-feedback">
+					    		<span>{{ error }}</span>
+					    	</div>
+				    	{% endfor %}
+
+				    {% else %}
+
+				    	{{ form.picture(class="form-control-file") }}
+
+				    {% endif %}
+				</div>
+				
+				
+			</fieldset>
+
+			<div class="form-group">
+				    {{ form.submit(class="btn btn-outline-info") }}
+			</div>
+		</form>
+
+
+	</div>
+
+	<hr>
+
+{% endblock content %}

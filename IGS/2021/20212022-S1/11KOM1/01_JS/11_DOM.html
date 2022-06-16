@@ -1,0 +1,21 @@
+<!-- 
+DOM -> Document Object Model
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>DOM HTML and JS</title>
+</head>
+<body>
+	<h1 id="main-heading">Hello Dom...!</h1>
+
+	<script type="text/javascript">
+		var headingTextElement = document.getElementById("main-heading");
+		console.log(headingTextElement.innerHTML);
+
+		var newHeadingText = prompt("Please provide a new one!");
+		headingTextElement.innerHTML = newHeadingText;
+	</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!-- 
+ref : https://www.w3schools.com/js/js_objects.asp
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bouncing Ball</title>
+</head>
+<body>
+	<canvas id="canvas" width="500" height="500" style="background-color: darkmagenta;"></canvas>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		let canvas = $('#canvas');
+		let ctx = canvas[0].getContext('2d');
+
+		canvas.clearCanvas = () => {
+
+			ctx.clearRect(0, 0, canvas[0].width, canvas[0].height);
+
+		}
+
+		function circle(x, y, radius, color, isFilled) {
+			ctx.strokeStyle = color;
+			ctx.beginPath();
+			ctx.arc(x, y, radius, 0, 2*Math.PI, false);
+			ctx.stroke();
+			if (isFilled) {
+				ctx.fillStyle = color;
+				ctx.fill();
+			}
+		}
+
+		class Ball {
+
+			constructor(x, y){
+				this.x = x;
+				this.y = y;
+				this.color = "White";
+				this.radius = 5;
+
+				this.xSpeed = 3; //random
+				this.ySpeed = 5; //random
+			}
+
+			draw(){
+				circle(this.x, this.y, this.radius, this.color, true);
+			}
+
+			move(){
+				this.x += this.xSpeed;
+				this.y += this.ySpeed;
+			}
+
+			checkCollisionWithEdge(){
+				// || -> or
+
+				if (this.x < 0 || this.x > canvas[0].width){
+					this.xSpeed = -this.xSpeed;
+				}
+
+				if (this.y < 0 || this.y > canvas[0].height){
+					this.ySpeed = -this.ySpeed;
+				}
+
+			}
+
+		}
+
+		let ball = new Ball(canvas[0].width/2, canvas[0].height/2);
+		// ball.draw();
+		
+		let mainloop = setInterval( () => {
+
+			canvas.clearCanvas();
+			ball.draw();
+			ball.move();
+			ball.checkCollisionWithEdge();
+
+		}, 30);
+
+	</script>
+</body>
+</html>

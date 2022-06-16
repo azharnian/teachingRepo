@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Interval JS</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var counter = 1;
+
+		var printMsg = function(){
+			console.log(`You have been staring at your console for ${counter} seconds`);
+			counter++;
+		}
+		var stopPrinting = function(){
+			clearInterval(intervalId)
+		}
+
+		//setInterval(func, interval)
+		var intervalId = setInterval(printMsg, 1000);
+	</script>
+	<button onclick="stopPrinting()">STOP</button>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Changing Color</title>
+</head>
+<body>
+	<canvas id="canvas" width="400" height="400" style="border: 1px solid black;"></canvas>
+	<script type="text/javascript">
+		let canvas = document.getElementById("canvas");
+		let ctx = canvas.getContext("2d");
+
+		ctx.fillStyle = "Red";
+		rect0 = ctx.fillRect(10, 10, 100, 100);
+
+		ctx.fillStyle = "Green";
+		rect1 = ctx.fillRect(110, 10, 100, 100);
+
+		ctx.strokeStyle = "Blue";
+		ctx.lineWidth = 5;
+		ctx.strokeRect(10, 10, 100, 100);
+		ctx.strokeRect(110, 10, 100, 100);
+
+	</script>
+</body>
+</html>

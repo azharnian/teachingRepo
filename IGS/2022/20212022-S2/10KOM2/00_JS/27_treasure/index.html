@@ -1,0 +1,79 @@
+<!-- 
+1. Ubah gambar peta dengan ukuran lebih besar (dilarang ganti att width!)
+2. Ubah pesan yg akan disampaikan saat klik bagian peta
+3. Tambahkan limit klik dan diakhiri dengan pesan game over melalui alert box jika limit habis
+4. Tampilkan sisa limit klik di halaman html nya
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Find The Treasure ...</title>
+</head>
+<body>
+	<h1>Find The Treasure ...</h1>
+	<img src="treasuremap.jpg" style="width:400px">
+	<p id="message"></p>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		// console.log($('img').position().left, $('img').position().top)
+
+		let width = $('img').width();
+		let height = $('img').height();
+
+		// console.log(width, height);
+
+		function getRandomNumber(init_position, size) {
+			return Math.floor(Math.random() * size) + Math.ceil(init_position);
+		}
+
+		let target = {
+			x : getRandomNumber($('img').position().left, width),
+			y : getRandomNumber($('img').position().top, height)
+		}
+		// target 8 <= x <= 408 dan 80 <= y <= 480
+		// console.log(target);
+
+		function getDistance(event, target) {
+			let dx = event.pageX - target.x
+			let dy = event.pageY - target.y
+
+			return Math.sqrt((dx*dx) + (dy*dy));
+		}
+
+		function getMessage(distance) {
+			if (distance < 20) {
+				return "Terbakar"
+			} else if (distance < 40) {
+				return "Sangat Panas"
+			} else if (distance < 80) {
+				return "Panas"
+			} else if (distance < 160) {
+				return "Hangat"
+			} else if (distance < 320) {
+				return "Dingin"
+			} else {
+				return "Membeku"
+			}
+		}
+
+
+
+		$('img').click(function (event) {
+
+			// console.log(event.pageX, event.pageY)
+			let distance = getDistance(event, target);
+			// console.log(distance);
+			let message = getMessage(distance);
+
+			$("#message").text(message);
+
+			if (distance < 8){
+				alert("Found the treasure");
+			}
+		})
+	</script>
+</body>
+</html>

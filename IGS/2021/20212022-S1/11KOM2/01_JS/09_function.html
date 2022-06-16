@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Function JS</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var ourFirstFunction = function(){
+			console.log("This is my first function.")
+		};
+
+		var printingMultipleTimes = function(howManyTimes, whatToPrint){
+			for(var i = 0; i < howManyTimes; i++){
+				console.log(i+" "+whatToPrint);
+			};
+		};
+
+		//longhand var-let-const
+		var double = function(number){
+			return number * 2;
+		};
+
+		//shorthand
+		function tripel(number){
+			return number * 3;
+		};
+
+		var medalForScore = function(score){
+			if (score < 3){
+				return "Bronze";
+			};
+			if (score < 7){
+				return "Silver";
+			};
+			return "Gold";
+		};
+
+		ourFirstFunction();
+		printingMultipleTimes(3, "I LOVE YOU");
+		console.log(double(3)+double(10));
+		var double5 = double(5);
+
+		console.log(medalForScore(2)); // "Bronze"
+		console.log(tripel(10));
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Object</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//const name = "Bejo";
+
+		// object tanpa constructor
+		function sleep() {
+			console.log("zzzzzzzz");
+		}
+
+		let pig = {
+			name: "Pancake",
+			legs: 3,
+			isCute: true,
+
+			eat: function () {
+				console.log(`${this.name} is eating now!.`); // self.name
+			},
+
+			sleepy: sleep,
+		}
+
+		pig.speak = function () {
+			console.log(`Oik oik, my name is ${this.name}`)
+		}
+
+		console.log(pig.name);
+		console.log(pig["legs"]);
+		pig.eat();
+		pig.sleepy();
+		pig.speak();
+	</script>
+</body>
+</html>

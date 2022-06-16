@@ -1,0 +1,19 @@
+{
+	"anasaz.har" : {
+		"password" : "12345",
+		"first_name" : "anas",
+		"last_name" : "azhar",
+		"bio" : "setengah - setengah",
+		"interest" : ["macul", "mancing"],
+		"profile_picture" : "win.png"
+	},
+
+	"yakuza" : {
+		"password" : "qwerty",
+		"first_name" : "muhammad",
+		"last_name" : "yakuza",
+		"bio" : "no pain no gain",
+		"interest" : ["mbacok"],
+		"profile_picture" : "igs.png"
+	}
+}

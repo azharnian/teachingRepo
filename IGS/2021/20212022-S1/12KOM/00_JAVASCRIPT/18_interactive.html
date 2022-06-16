@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Interactive JS</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var timeUp = function (){
+			alert("Time's Up!");
+		};
+
+		var stopAlarm = function (){
+			clearTimeout(timeoutId);
+			alert("Alarm abort!");
+		}
+
+		var timeoutId = setTimeout(timeUp, 5000);
+	</script>
+	<button onclick="stopAlarm()">Stop Alarm</button>
+</body>
+</html>

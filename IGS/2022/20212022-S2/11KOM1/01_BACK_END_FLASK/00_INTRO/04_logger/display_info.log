@@ -1,0 +1,4 @@
+INFO:root:Ran with args : () and kwargs {}
+INFO:root:Ran with args : ('Kevin', 10) and kwargs {}
+INFO:root:Ran with args : ('1px', 'solid', 'Black') and kwargs {'margin': '10px'}
+INFO:root:Ran with args : ('1px', 'solid', 'Black') and kwargs {'margin': '10px'}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hangman Javascript</title>
+</head>
+<body>
+	<h1></h1>
+	<script type="text/javascript">
+		//kumpulan kata-kata yg ada di array
+		var words = [
+			"python",
+			"javascript",
+			"pascal",
+			"c++",
+			"lua",
+		];
+
+		// kata random yg diambil oleh komputer untuk ditanyakan ke pemain
+		var randomWord = words[Math.floor(Math.random() * words.length)];
+
+
+		// menyiapkan tampilan untuk kata yang dijawab.
+		var answerArray = []; // ["_", "_", "_"] -> _ _ _ _ _
+
+		for (var i = 0; i < randomWord.length; i++){
+			answerArray[i] = "_";
+		}
+
+		var remainingLetters = randomWord.length;
+
+		while (remainingLetters){
+			alert(answerArray.join(" "));
+
+			var guess = prompt("Guess a letter ... ");
+
+			if (guess == null){
+				break;
+			} else if (guess.length != 1){
+				alert("Please enter a single letter!");
+			} else {
+				for (var i = 0; i < randomWord.length; i++){
+					if (randomWord[i] === guess){
+						answerArray[i] = guess;
+						remainingLetters--;
+					}
+				}
+			}
+		}
+		alert("Good Job.... the answer was "+ randomWord);
+
+		
+		// var text = prompt("Put anything ...");
+		// console.log(text);
+		// document.querySelector('h1').innerHTML = text;
+	</script>
+</body>
+</html>

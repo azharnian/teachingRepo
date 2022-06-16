@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Interactive JS</title>
+</head>
+<body>
+	<h1 id="heading">Hello world!</h1>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		var leftOffset = 0 ;// lokasi x (dari kiri object)
+
+		function moveHeading(){
+			console.log("works");
+			$('#heading').offset({left : leftOffset});
+
+			leftOffset++;
+
+			if (leftOffset > 300){
+				leftOffset = 0;
+			};
+		};
+
+		var stopInterval = function (){
+			clearInterval(intervalId)
+		}
+
+		var intervalId = setInterval(moveHeading, 1);
+	</script>
+	<button onclick="stopInterval()">Stop Moving</button>
+</body>
+</html>

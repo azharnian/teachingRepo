@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Before</title>
+    <style>
+      /*pseudo element*/
+      @media (min-width: 600px) {
+        h1::before {
+          content: "Welcome to My Web Page!";
+        }
+
+        h2::after {
+          content: " ok ok!"
+        }
+      }
+
+      @media (max-width: 599px){
+        h1::before {
+          content: "Welcome!";
+        }
+
+        h2::after {
+          content: " not?"
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Pseudo element -->
+    <!--
+    @media (min-width: 760px) and (orientation: landscape) {}
+    @media (min-width: 760px), (orientation: landscape) {}
+    @media not (min-width: 760px) and (orientation: landscape) {}
+    @media only screen {}
+    @media all {}
+    -->
+    <h1></h1>
+    <h2>Ok</h2>
+  </body>
+</html>

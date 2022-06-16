@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Change Color</title>
+</head>
+<body>
+	<h1 id="heading">Anas Azhar!</h1>
+	<button id="r">Red</button>
+	<button id="g">Green</button>
+	<button id="b">Blue</button>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		
+		$("#r").click(function (){
+			$("#heading").css('color', 'red');
+		})
+
+		$("#g").click(function (){
+			$("#heading").css('color', 'green');
+		})
+
+		$("#b").click(function (){
+			$("#heading").css('color', 'blue');
+		})
+
+	</script>
+</body>
+</html>

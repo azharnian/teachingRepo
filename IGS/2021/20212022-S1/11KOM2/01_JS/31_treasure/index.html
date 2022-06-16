@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- 
+1. Increasing the playing area
+2. Customizing msg
+3. Adding a click limit (alert Game Over)
+4. Displaying the number of remaining clicks. (boleh digabung dengan id msg)
+5. Deploying on Google Script (img pakai link ajah...)
+ -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Find the buried treasure!</title>
+</head>
+<body>
+	<h1 id="heading">Find the buried treasure!</h1>
+	<img id="map" src="imgs/treasuremap.jpg" width=400 height=400>
+	<p id="message"></p>
+	<p id="limit"></p>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		
+		//get a random number from 0 to x
+		function getRandomNumber (size){
+			return Math.floor(Math.random() * size);
+		}
+
+		//calculate distance between click event and target
+		function getDistance(event, target) {
+			const dx = event.offsetX - target.x;
+			const dy = event.offsetY - target.y;
+
+			return Math.sqrt( (dx * dx) + (dy * dy) );
+		}
+
+		//get a msg representing the distance
+		function getDistanceMessage(distance) {
+	
+			if (distance < 10){
+				return "Boiling hot!";
+			} else if (distance < 20){
+				return "Really hot.";
+			} else if (distance < 40){
+				return "Hot.";
+			} else if (distance < 80){
+				return "Warm.";
+			} else if (distance < 160){
+				return "Cold";
+			} else if (distance < 320){
+				return "Really Cold";
+			} else {
+				return "Freezing";
+			};
+		}
+
+		function setting_up_target(){
+			return {
+				x : getRandomNumber(width),
+				y : getRandomNumber(height)
+			};
+		}
+
+		function reset_game(){
+			clicks = 0;
+			limits = 30;
+			target = setting_up_target()
+		}
+
+
+		const width = 800;
+		const height = 800;
+		let clicks = 0;
+		let limits = 30;
+
+		let target = setting_up_target()
+
+		$('#map').click(function (event) {
+			clicks++;
+			limits--;
+			const distance = getDistance(event, target);
+			const message = getDistanceMessage(distance);
+			// console.log(message);
+			$("#message").text(message);
+			$("#limit").text(`Your limit is ${limits}.`);
+
+			if (limits===0){
+				alert(`Game over dude, we start again.`);
+				reset_game();
+			}
+
+			if (distance < 8){
+				alert(`Found the treasure in ${clicks} clicks.`)
+				reset_game();
+			};
+		});
+
+
+	</script>
+</body>
+</html>

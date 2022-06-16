@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hangman!!!</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//Kumpulan kata-kata untuk ditebak (1 . Perbanyak Kata untuk ditebak minimal 10 dan pakai lowercase)
+		var words = [
+		"monkey",
+		"amazing",
+		"pancake",
+		"carrot",
+		"javascript",
+		"python"
+		];
+
+		function pickWord(){
+			return words[Math.floor(Math.random() * words.length )];
+		}
+
+		function setupAnswerArray(word){
+			var answerArray = []
+			for (var i = 0; i < word.length ; i++){
+				answerArray[i] = "_";
+				// answerArray.push("_");
+			};
+			return answerArray;
+		}
+
+		function showPlayerProgres(answerArray){
+			// use alert
+		};
+
+		function getGuess(){
+			// use prompt
+		};
+
+		function updateGameState(guess, word, answerArray){
+			//..
+		}
+
+		function showWinLoseCancel(){
+			//..
+		}
+
+		//Ambil satu kata random dari array
+		var word = pickWord()
+
+		// Menyiapkan jawaban dari player
+		var answerArray = setupAnswerArray(word); //["_", "_", "_", "_", "_", "_"]
+
+
+		var remainingLetters = word.length;
+		var limit = 3;
+		var isCancel = false;
+		while (remainingLetters > 0){ // (3 Beri batas / limit menebak dan beri pesan yg sesuai)
+			alert(answerArray.join(" "));
+
+			var guess = prompt("Guess a letter, or click cancel to stop playing, your limit = "+limit); // ( 2 tidak casesensitive)
+			if (guess == null){
+				isCancel = true;
+				break;
+			} else if (guess.length !== 1) {
+				alert("Please enter a single letter!");
+			} else {
+				var isExists = false;
+				for (var i = 0; i < word.length ; i++) {
+					if(word[i] === guess.toLowerCase()){
+						answerArray[i] = guess;
+						remainingLetters--;
+						isExists = true;
+					}
+				};
+				if (!isExists) {
+					limit--;
+					if (limit <= 0){
+						break;
+					};
+				};
+			};
+			//akhir dari looping
+		};
+
+		// (4 Perbaiki bug untuk berhasil / gagal / batal)
+		if (isCancel){
+			alert("Thank you for your playing");
+		} else {
+			if (limit === 0) {
+				alert("Sorry, You Lose...");
+			} else {
+				alert(answerArray.join(" "));
+				alert("Good Job! the answer was "+word);
+			};
+		}
+		
+
+
+	</script>
+</body>
+</html>

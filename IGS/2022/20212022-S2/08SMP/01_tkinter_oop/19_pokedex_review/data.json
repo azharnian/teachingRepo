@@ -1,0 +1,23 @@
+{
+	"Charmender": {
+		"fullname" : "Charmender 004",
+		"image" :"img/01.png",
+		"description" :"It has a preference for hot things.\nWhen it rains, steam is said to spout from the tip of its tail.",
+		"types":[{"type":"fire", "color":"orange"}, {"type":"wind", "color":"pink"}],
+		"weaknesses":[{"weakness":"water", "color":"blue"}, {"weakness":"ground", "color":"brown"}, {"weakness":"rock", "color":"black"}]
+	},
+	"Venusaur" : {
+		"fullname" : "Venusaur 003",
+		"image" :"img/02.png",
+		"description" :"Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.",
+		"types":[{"type":"grass", "color":"green"}, {"type":"poison", "color":"purple"}],
+		"weaknesses":[{"weakness":"fire", "color":"orange"}, {"weakness":"psychic", "color":"pink"}, {"weakness":"flying", "color":"grey"}, {"weakness":"ice", "color":"blue"}]
+	},
+	"Charmeleon": {
+		"fullname" : "Charmeleon",
+		"image" :"img/",
+		"description" :"",
+		"types":[],
+		"weaknesses":[]
+	}
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Drawing Circle</title>
+</head>
+<body>
+	<canvas id="canvas" width="400" height="400" style="background-color:gray;"></canvas>
+	<script type="text/javascript">
+		let canvas = document.getElementById("canvas");
+		let ctx = canvas.getContext("2d");
+
+		// buatin function circle
+		function circle() {
+			// body...
+		}
+
+		ctx.strokeStyle = "Purple";
+		ctx.fillStyle = "Purple";
+
+		// 1 Lingkaran
+		ctx.beginPath();
+		ctx.arc(200, 200, 50, 0, 2*Math.PI, false); // (xp, yp, radius, start, stop, direction/mode)
+		ctx.closePath();
+		ctx.stroke();
+		ctx.fill();
+
+		// 1/2 Lingkaran
+		ctx.beginPath()
+		ctx.arc(50, 50, 30, 0, Math.PI, true);
+		ctx.stroke();
+		// ctx.fill();
+
+		// 1/2 Lingkaran
+		ctx.beginPath()
+		ctx.arc(100, 100, 30, 0, Math.PI, false);
+		ctx.stroke();
+		// ctx.fill();
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

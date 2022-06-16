@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- 
+1. Increasing the playing area
+2. Customizing msg
+3. Adding a click limit (alert Game Over)
+4. Displaying the number of remaining clicks. (boleh digabung dengan id msg)
+5. Deploying on Google Script (img pakai link ajah...)
+ -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Find the buried treasure!</title>
+</head>
+<body>
+	<h1 id="heading">Find the buried treasure!</h1>
+	<img id="map" src="imgs/treasuremap.jpg" width=800 height=800>
+	<p id="message"></p>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		
+		//get a random number from 0 to x
+		function getRandomNumber (size){
+			return Math.floor(Math.random() * size);
+		}
+
+		//calculate distance between click event and target
+		function getDistance(event, target) {
+			let dx = event.offsetX - target.x;
+			let dy = event.offsetY - target.y;
+
+			return Math.sqrt( (dx * dx) + (dy * dy) );
+		}
+
+		//get a msg representing the distance
+		function getDistanceMessage(distance) {
+	
+			if (distance < 10){
+				return "Boiling hot!";
+			} else if (distance < 20){
+				return "Really hot.";
+			} else if (distance < 40){
+				return "Hot.";
+			} else if (distance < 80){
+				return "Warm.";
+			} else if (distance < 160){
+				return "Cold";
+			} else if (distance < 320){
+				return "Really Cold";
+			} else {
+				return "Freezing";
+			};
+		}
+
+
+		let width = 800;
+		let height = 800;
+		let clicks = 0;
+
+		let target = {
+			x : getRandomNumber(width),
+			y : getRandomNumber(height)
+		}
+
+		$('#map').click(function (event) {
+			clicks++;
+			let distance = getDistance(event, target);
+			let message = getDistanceMessage(distance);
+			// console.log(message);
+			$("#message").text(message);
+
+			if (distance < 8){
+				alert(`Found the treasure in ${clicks} clicks.`)
+			};
+		});
+
+
+	</script>
+</body>
+</html>

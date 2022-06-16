@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>A radial gradient on two different elements</title>
+
+    <style media="screen">
+      body {
+        height: 100vh;
+        background-image: linear-gradient(gray, white);
+        /* radial-gradient */
+        background-repeat: no-repeat;
+      }
+
+      .container {
+        width: 45rem;
+        margin: 0 auto;
+      }
+
+      .grad {
+        float: left;
+        background-color: white;
+        margin-right: 5px;
+        width: 10rem;
+        height: 20rem;
+      }
+
+      .one {
+        background-image: radial-gradient(at bottom right,red, white);
+      }
+
+      .two {
+        background-image: linear-gradient(black, white);
+      }
+
+      .gradient {
+        background-image: radial-gradient(circle at 70% 64%, orange, #25b25d 18%, gray 77%);
+      }
+    </style>
+  </head>
+  <body>
+  <div class="container">
+    <div class="grad one">
+
+    </div>
+    <div class="grad two">
+
+    </div>
+    <div class="grad gradient">
+
+    </div>
+  </div>
+  </body>
+</html>

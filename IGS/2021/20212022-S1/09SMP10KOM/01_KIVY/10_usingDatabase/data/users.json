@@ -1,0 +1,18 @@
+{
+	"anas" : {
+		"password" : "12345",
+		"first" : "anas",
+		"last" : "azhar",
+		"bio" : "biarkan waktu menjawab",
+		"interest" : ["macul", "mancing"],
+		"pic" : "win.png"
+	},
+	"yakuza" : {
+		"password" : "12345",
+		"first" : "muhammad",
+		"last" : "yakuza",
+		"bio" : "no pain no gain",
+		"interest" : ["mbacok"],
+		"pic" : "mbak.jpeg"
+	}
+}

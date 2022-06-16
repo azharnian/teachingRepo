@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Animating a Headline</title>
+    <style media="screen">
+      body {
+        height: 100vh;
+        background: #efefef;
+        text-align: center;
+        font-size: 2rem;
+        padding: 2rem 0;
+        animation: slidingDown 3s infinite;
+        animation-direction: alternate;
+      }
+
+      @keyframes slidingDown {
+        0% {
+          transform: translateY(-100px);
+        }
+
+        50% {
+          transform: translateY(200px);
+        }
+
+        100% {
+          transform: translateY(300px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Headline</h1>
+  </body>
+</html>

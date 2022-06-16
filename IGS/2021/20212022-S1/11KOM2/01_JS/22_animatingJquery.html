@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Animating with JQUERY</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	
+	<script type="text/javascript">
+		var changeText = function(){
+			$("h1").text("I Love You 3000");
+		}
+
+		function action() {
+			console.log("works!");
+			$("h1").fadeOut(3000);
+			setTimeout(changeText ,3000); // + 3s
+			$("h1").fadeIn(3000);
+		}
+	</script>
+</head>
+<body>
+	<h1>Javascript is Awesome!</h1>
+	<button onclick="action()">Click Me</button>	
+	<script type="text/javascript">
+		//$("h1").fadeOut(3000).fadeIn(3000).slideUp(2000).slideDown(2000); // bentung chaining
+		//$("h1").fadeIn(3000);
+		//$("h1").slideUp(2000);
+		//$("h1").slideDown(2000);
+
+		// 1. h1 menghilang
+		// 2. ubah textnya jadi text lain
+		// 3. h1 dimunculkan kembali
+	</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+strDay, iDay = input().split()
+iHour, iMinute, iSecond = input().split(" : ")
+strDay, fDay = input().split()
+fHour, fMinute, fSecond = input().split(" : ")
+iDay, iHour, iMinute, iSecond, fDay, fHour, fMinute, fSecond = int(iDay), int(iHour), int(iMinute), int(iSecond), int(fDay), int(fHour), int(fMinute), int(fSecond)

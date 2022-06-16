@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Making Things Move</title>
+</head>
+<body>
+	<canvas id="canvas" width="400" height="400"></canvas>
+	<script type="text/javascript">
+		let canvas = document.getElementById("canvas");
+		let ctx = canvas.getContext("2d");
+
+		let posX = 0;
+
+		let movingSquare = function () {
+			ctx.clearRect(0, 0, 400, 400);
+			ctx.fillRect(posX, 0, 20, 20);
+
+			posX++;
+			if (posX > 400){
+				posX = 0;
+			}
+		}
+		setInterval(movingSquare, 30);
+
+	</script>
+</body>
+</html>

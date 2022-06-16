@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>More Colors</title>
+
+	<style type="text/css">
+		#uglyparagraph {
+			background-color: grey;
+			border-color: black;
+			color: red;
+		}
+
+		#uglydiv {
+			background-color: black;
+			border-color: red;
+			color: white;
+		}
+
+		.greencell {
+			background-color: green;
+		}
+
+		.redcell {
+			background-color: red;
+		}
+
+		.bluecell {
+			background-color: blue;
+		}
+
+		.yellowcell {
+			background-color: yellow;
+		}
+
+		table, tr, td {
+			border: 5px solid black;
+			border-collapse: collapse;
+
+		}
+
+		#uglyquote {
+			background-color: blue;
+			border-color: yellow;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<h1>
+		Background, text, and border
+	</h1>
+
+	<p id="uglyparagraph">
+		Grey paragraph, black border, red text with <span style="color: orange;">orange span</span>
+	</p>
+
+	<div id="uglydiv">
+		Black div, red border, white text
+	</div>
+
+	<table>
+		<tbody>
+			<tr>
+				<td class="greencell">
+					Green Table Cell
+				</td>
+				<td class="redcell">
+					Red Table Cell
+				</td>
+			</tr>
+			<tr>
+				<td class="bluecell">
+					Blue Table Cell
+				</td>
+				<td class="yellowcell">
+					Yellow Table Cell
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<blockquote id="uglyquote">
+		Blue blockquote, yellow border, white text
+	</blockquote>
+</body>
+</html>

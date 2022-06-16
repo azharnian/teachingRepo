@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Gradient Background</title>
+    <style media="screen">
+      body {
+        height: 100vh;
+        background-image: linear-gradient(gray, white);
+        background-repeat: no-repeat;
+      }
+
+      .container{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 10rem;
+      }
+      .grad {
+
+        background-color: white;
+        width: 10rem;
+        height: 20rem;
+        box-sizing: border-box;
+        border-radius: 1rem;
+      }
+
+      .one{
+        border : solid 2px aqua;
+        background-image: radial-gradient(at bottom right, red, white);
+      }
+
+      .two {
+        background-image: linear-gradient(black, white);
+      }
+
+      .three {
+        background-image: radial-gradient(circle at 50% 70%, orange, #25b25d 18%, gray 77%)
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="grad one">
+
+      </div>
+      <div class="grad two">
+
+      </div>
+      <div class="grad three">
+
+      </div>
+    </div>
+  </body>
+</html>

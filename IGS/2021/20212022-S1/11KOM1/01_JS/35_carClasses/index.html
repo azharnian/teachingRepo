@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>More Object with Class</title>
+</head>
+<body>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+
+		//Car Constructor
+		class Car { // 2015 ES6 JS
+			constructor (x, y){ // def __init__
+				this.x = x;
+				this.y = y;
+				this.odometer = 0;
+			}
+
+			draw(){ // def draw
+				let carHtml = '<img src="img/car.png">';
+
+				this.carElement = $(carHtml);
+
+				this.carElement.css({
+					position: "absolute",
+					left: this.x,
+					top: this.y
+				});
+
+				$("body").append(this.carElement);
+			}
+
+			moveRight(){
+				this.x += 100;
+
+				this.carElement.css({
+					left: this.x,
+					top: this.y
+				});
+			}
+
+			moveLeft(){
+				this.x -= 100;
+
+				this.carElement.css({
+					left: this.x,
+					top: this.y
+				});
+			}
+
+			moveUp(){
+				this.y -= 100;
+
+				this.carElement.css({
+					left: this.x,
+					top: this.y
+				});
+			}
+			moveDown(){
+				this.y += 100;
+
+				this.carElement.css({
+					left: this.x,
+					top: this.y
+				});
+			}
+		};
+
+		Car.prototype.countingOdometer = function () {
+			this.odometer ++;
+			console.log(`Car : ${this.odometer} Kms.`)
+		}
+
+		let tesla = new Car(10, 20);
+		let toyota = new Car(100, 200);
+		
+		tesla.draw();
+		tesla.moveRight();
+		tesla.moveRight();
+		tesla.countingOdometer();
+		toyota.draw();
+
+	</script>
+</body>
+</html>

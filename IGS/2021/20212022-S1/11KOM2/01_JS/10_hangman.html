@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HangMan Javascript!!!</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//Kumpulan kata-kata di array
+		var words = [ //(1 perbanyak kata kata untuk dirandom)
+			"python",
+			"javascript",
+			"pascal",
+			"c++",
+			"lua",
+		];
+
+		function pickWord(){
+
+		};
+
+		function setupAnswerArray(){
+
+		};
+
+		function showPlayerProgres(){
+
+		};
+
+		function getGuess(){
+
+		};
+
+		function updateGameState(guess, word, answerArray){
+
+		};
+
+		function showWinLoseCance(){
+
+		};
+
+
+		// ambil random satu untuk jadi kunci jawaban
+		var word = words[Math.floor(Math.random() * words.length)];
+
+		// tempat untuk menampilkan jawaban benar dari player
+		var answerArray = []; // ["_", "_", "_"]
+		for (var i = 0; i < word.length ; i++){
+			answerArray[i] = "_";
+			// answerArray.push("_");
+		}
+
+		var remainingLetters = word.length;
+		var limit = 3;
+		var cancel = false;
+		while (remainingLetters > 0){ // (3 beri batas /limit menebak, jangan tidak terhingga)
+			alert(answerArray.join(" "));
+
+			var guess = prompt("Guess a letter or click cancel to stop playing."); //(2 tidak casesensitive)
+
+			if (guess == null){
+				cancel = true;
+				break;
+			} else if (guess.length != 1){
+				alert("Please enter a single letter");
+			} else {
+				var found = false;
+				for (var j = 0; j < word.length; j++){
+					if (word[j] == guess.toLowerCase()){
+						answerArray[j] = guess;
+						remainingLetters--; // bug
+						found = true;
+					};
+				};
+				if (!found){ // 3
+					limit--;
+					if (limit == 0){
+						break;
+					};
+				};
+			};
+			//akhir dari while loop.
+		};
+		//(4 perbaiki bug untuk berhasil, gagal, dan batal main.)
+		if (cancel){
+			alert("Thank you for your playing!");
+		} else {
+			if (limit > 0){
+				alert(answerArray.join(" "));
+				alert("Good job!, the answer was "+word);
+			} else {
+				alert("Sorry, you lose...");
+			};
+		};
+		
+
+	</script>
+</body>
+</html>

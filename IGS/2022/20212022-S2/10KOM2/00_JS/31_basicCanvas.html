@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Basic Canvas</title>
+</head>
+<body>
+	<canvas id="canvas" width="400px" height="400px" style="background-color: grey;"></canvas>
+	<script type="text/javascript">
+		let canvas = document.getElementById("canvas");
+		let ctx = canvas.getContext("2d");
+
+		ctx.fillRect(100, 200, 50, 20); // (left, top, width, height)
+	</script>
+</body>
+</html>

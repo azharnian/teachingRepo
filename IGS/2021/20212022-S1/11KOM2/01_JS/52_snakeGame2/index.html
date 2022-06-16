@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Snake Game</title>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="600"></canvas>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		let canvas = document.getElementById("canvas");
+		let ctx = canvas.getContext("2d");
+
+		let width = canvas.width;
+		let height = canvas.height;
+		let blockSize = 20;
+		let widthInBlocks = width/blockSize; //Jumlah Column
+		let heightInBlocks = height/blockSize; //Jumlah Baris
+
+		let score = 0;
+
+		// Object border
+		let border = {
+			color : "grey",
+			blockSize : blockSize,
+			width : width,
+			height : height,
+
+			draw : function () {
+				ctx.fillStyle = this.color;
+				let top = ctx.fillRect(0, 0, this.width, this.blockSize);
+				let bottom = ctx.fillRect(0, this.height-this.blockSize, this.width, this.blockSize);
+				let left = ctx.fillRect(0, 0, this.blockSize, this.height);
+				let right = ctx.fillRect(this.width-this.blockSize, 0, this.blockSize, this.height);
+			}
+		}
+
+		// Class Object Block
+		class Block {
+
+			constructor (row, column){
+				this.row = row;
+				this.column = column;
+
+				this.blockSize = blockSize;
+			}
+
+			drawSquare(color){
+				let x = this.row * this.blockSize;
+				let y = this.column * this.blockSize;
+
+				ctx.fillStyle = color;
+				ctx.fillRect(x, y, this.blockSize, this.blockSize);
+			}
+
+			circle(x, y, radius, color, isFilled){
+				ctx.strokeStyle = color;
+				ctx.beginPath();
+				ctx.arc(x, y, radius, 0, 2*Math.PI, false);
+				ctx.stroke();
+				if (isFilled){
+					ctx.fillStyle = color;
+					ctx.fill();
+				}	
+			}
+
+			drawCircle(color){
+				let centerX = this.row*this.blockSize + this.blockSize /2;
+				let centerY = this.column*this.blockSize + this.blockSize /2;
+				this.circle(centerX, centerY, this.blockSize/2, color, true);
+			}
+
+		}
+
+		// Class Object Snake
+		class Snake {
+
+			constructor(){
+				this.segments = [
+					new Block(7, 5), // head
+					new Block(6, 5),
+					new Block(5, 5) //tail
+				];
+				this.direction = "right";
+				this.nextDirection = "right";
+			}
+
+			draw() {
+				this.segments.forEach( (segment) => {
+					segment.drawSquare("LightBlue");
+				})
+			}
+
+			move() {
+				let head = this.segments[0];
+				let newHead;
+
+				this.direction = this.nextDirection;
+				// coming soon
+			}
+
+		}
+
+		// Class Object Apple
+		class Apple{
+			constructor(){
+				this.blockSize = blockSize;
+				this.block = new Block(0, 0);
+			}
+
+			draw(){
+				this.block.drawCircle("LimeGreen");
+			}
+
+			move(){
+				let randomCol = Math.floor(Math.random() * (widthInBlocks-2)) + 1;
+				let randomRow = Math.floor(Math.random() * (heightInBlocks-2)) + 1;
+
+				this.block = new Block(randomRow, randomCol);
+			}
+
+		}
+
+		// Object Teks Score - Single Object (Tidak Memiliki Class Object ak.a. Cetakan)
+		let scoreText = {
+			font : "20px Courier",
+			color: "Black",
+			align : "left",
+			baseline : "top",
+			blockSize : blockSize,
+
+			draw : function () {
+				let x = this.blockSize;
+				let y = this.blockSize;
+				ctx.font = this.font;
+				ctx.fillStyle = this.color;
+				ctx.textAlign = this.align;
+				ctx.textBaseline = this.baseline;
+				ctx.fillText(`Score : ${score}`, x, y);
+			}
+		}
+
+		scoreText.draw();
+		border.draw();
+
+		let snake = new Snake();
+		snake.draw();
+
+		let apple = new Apple();
+		apple.move();
+		apple.draw();
+
+	</script>
+</body>
+</html>

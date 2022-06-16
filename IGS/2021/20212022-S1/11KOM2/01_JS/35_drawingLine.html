@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Drawing Line</title>
+</head>
+<body>
+	<canvas id="canvas" width="400" height="400" style="border: 1px solid black;"></canvas>
+	<script type="text/javascript">
+		let canvas = document.getElementById("canvas");
+		let ctx = canvas.getContext("2d");
+
+		// diagonal line
+		ctx.moveTo(0, 0);
+		ctx.lineTo(400, 400);
+		ctx.stroke();
+
+		// cross line
+		ctx.strokeStyle = "SkyBlue";
+		ctx.beginPath();
+		ctx.moveTo(70, 10);
+		ctx.lineTo(120, 60);
+		ctx.moveTo(120, 10);
+		ctx.lineTo(70, 60);
+		ctx.closePath();
+		ctx.stroke();
+
+		// house
+		ctx.fillStyle = "Pink";
+		ctx.beginPath()
+		ctx.moveTo(160, 100);
+		ctx.lineTo(160, 60);
+		ctx.lineTo(190, 30);
+		ctx.lineTo(220, 60);
+		ctx.lineTo(220, 100);
+		ctx.lineTo(160, 100);
+		ctx.closePath();
+		ctx.fill();
+		ctx.stroke();
+
+	</script>
+</body>
+</html>

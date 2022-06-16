@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	{% if current_user.is_authenticated %}
+		<form method="POST" action="">
+		{{ form.hidden_tag() }}
+		
+		<fieldset class="form-group">
+
+			<div class="form-group">
+					
+				{{ form.content.label(class="form-control-label") }}
+
+				{% if form.content.errors %}
+
+					{{ form.content(class="form-control form-control-lg is-invalid") }}
+
+					<div class="invalid-feedback">
+						
+						{% for error in form.content.errors %}
+
+							<span>{{ error }}</span>
+
+						{% endfor %}
+
+					</div>
+
+				{% else %}
+
+					{{ form.content(class="form-control form-control-lg") }}
+
+				{% endif %}
+
+
+			</div>
+
+		</fieldset>
+
+		<div class="form-group">
+			{{ form.submit(class="btn btn-outline-info") }}
+		</div>
+
+	</form>
+	<hr>
+	{% endif %}
+	
+	{% for tweet in tweets.items %}
+		{% set image_file =  tweet.author.image_file%}
+		<article class="media content-section">
+			<div class="media-body">
+				<div class="article-metadata">
+					<img class="rounded-circle tweet-user-img" src="{{ url_for('static', filename='profile_pictures/'+image_file) }}">
+					<a href="">{{ tweet.author.username }}</a>
+					<small>posted on {{ tweet.date_posted.strftime('%y-%m-%d') }}</small>
+					{% if current_user.id == tweet.author.id %}
+					<small>
+						<a href="{{ url_for('tweet', tweet_id=tweet.id) }}">edit</a>
+					</small>
+					{% endif %}
+				</div>
+				<p>{{ tweet.content }}</p>
+			</div>
+		</article>
+
+	{% endfor %}
+
+	<!-- LETAKKAN DISINI -->
+
+	<nav aria-label="Page navigation example">
+	  <ul class="pagination justify-content-center">
+	  	{% if tweets.page > 1 %}
+	    <li class="page-item">
+	      <a class="page-link" href="{{ url_for('home', page=tweets.page-1) }}" aria-label="Previous">
+	        <span aria-hidden="true">&laquo;</span>
+	        <span class="sr-only">Previous</span>
+	      </a>
+	    </li>
+
+	    {% endif %}
+
+	    {% for page_number in range(tweets.page, tweets.page+3) %}
+	    	{% if page_number <= last_page %}
+				{% if page_number == tweets.page %}
+		    		<li class="page-item active"><a class="page-link" href="{{ url_for('home', page=page_number) }}">{{page_number}}</a></li>
+		    	{% else %}
+		    		<li class="page-item"><a class="page-link" href="{{ url_for('home', page=page_number) }}">{{page_number}}</a></li>
+		    	{% endif %}
+		    {% endif %}
+	    {% endfor %}
+
+	    {% if tweets.page < last_page %}
+	    <li class="page-item">
+	      <a class="page-link" href="{{ url_for('home', page=tweets.page+1) }}" aria-label="Next">
+	        <span aria-hidden="true">&raquo;</span>
+	        <span class="sr-only">Next</span>
+	      </a>
+	    </li>
+
+	    {% endif %}
+	  </ul>
+	</nav>
+
+
+
+{% endblock content %}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- 
+1. Increasing the playing area
+2. Adding more msg
+3. Adding a click limit (alert : Game Over)
+4. Displaying the number of remaining clicks.
+5. Deploy ke google script.
+
+ -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Find the buried treasure!</title>
+</head>
+<body>
+	<h1 id="heading">Find the buried treasure!</h1>
+	<img id="map" src="img/treasuremap.jpg" width="600", height="600">
+	<p id="message"></p>
+	<p id="limit_msg"></p>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+
+		//get a random number from 0 to x/y (600)
+		function getRandomNumber(size) {
+			return Math.floor(Math.random() * size);
+		}
+
+		//calculate distance between click event dan target
+		function getDistance(event, target) {
+			let dx = event.offsetX - target.x;
+			let dy = event.offsetY - target.y;
+
+			return Math.sqrt( (dx*dx) + (dy*dy));
+		}
+
+		//get a message representing the distance
+		function getDistanceMessage(distance) {
+			if(distance < 10){
+				return "Boiling hot bro!";
+			} else if (distance < 20){
+				return "Really hot";
+			} else if (distance < 40){
+				return "Hot";
+			} else if (distance < 80){
+				return "Warm!";
+			} else if (distance < 160){
+				return "Cold";
+			} else if (distance < 320){
+				return "Really cold!";
+			} else {
+				return "Freeze!";
+			};
+		}
+
+		function clickImage(event) {
+			clicks ++;
+			limits --;
+			const distance = getDistance(event, target);
+			const message = getDistanceMessage(distance);
+
+			$("#message").text(message);
+			$("#limit_msg").text(`Your Limit is : ${limits}.`);
+
+			if (limits == 0){
+				alert(`Game Over Dude .... and we start again ...  `);
+				limits = 30;
+				clicks = 0;
+			}
+
+			if (distance<8){
+				alert(`Found the treasure in ${clicks} clicks.`);
+				limits = 30;
+				clicks = 0;
+			}
+		}
+
+		const width = 600;
+		const height = 600;
+		let clicks = 0;
+		let limits = 30;
+
+		const target = {
+			x : getRandomNumber(width),
+			y : getRandomNumber(height)
+		}
+
+		$("#map").click(clickImage);
+
+
+	</script>
+</body>
+</html>

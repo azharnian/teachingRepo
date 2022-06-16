@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	{% if current_user.is_authenticated %}
+		<div class="content-section">
+			<form method="POST" action="">
+				{{ form.hidden_tag() }}
+				<fieldset class="form-group">
+					<div class="form-group">
+						
+						{{ form.content.label(class="form-control-label") }}
+
+						{% if form.content.errors %}
+
+							{{ form.content(class="form-control form-control-lg is-invalid") }}
+
+							<div class="invalid-feedback">
+								
+								{% for error in form.content.errors %}
+
+									<span>{{ error }}</span>
+
+								{% endfor %}
+
+							</div>
+
+						{% else %}
+
+							{{ form.content(class="form-control form-control-lg") }}
+
+						{% endif %}
+
+					</div>
+				</fieldset>
+
+				<div class="form-group">
+					{{ form.submit(class="btn btn-outline-info") }}
+				</div>
+
+			</form>	
+		</div>
+	{% endif %}
+
+	
+	{% for tweet in tweets %}
+
+		<article class="media content-section">
+			<div class="media-body">
+				<div class="article-metadata">
+					<img class="rounded-circle tweet-user-img" src="{{ url_for('static', filename='profile_pictures/'+tweet.author.image_file) }}">
+					<a href="">{{ tweet.author.username }}</a>
+					<small>posted on {{ tweet.date_posted.strftime('%y-%m-%d') }}</small>
+				</div>
+				<p>{{ tweet.content }}</p>
+				{% if current_user.id == tweet.author.id %}
+				<a href="{{ url_for('tweet', tweet_id=tweet.id) }}">edit</a>
+				{% endif %}
+			</div>
+		</article>
+
+	{% endfor %}
+
+{% endblock content %}

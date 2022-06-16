@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- 
+1. Increasing the playing area
+2. Editing msg
+3. Adding a click limit (alert Game Over, target reset, clicks reset)
+4. Displaying the number of remaining clicks (element <p>)
+5. Deploying with google script link
+ -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Find the buried treasure!</title>
+</head>
+<body>
+	<h1 id="heading">Find the buried treasure!</h1>
+	<img id="map" src="imgs/treasuremap.jpg" width=400 height=400>
+	<p id="distance"></p>
+	<p id="limit"></p>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		//Game code goes here ...
+		
+		//Get a random number from 0 to x
+		function getRandomNumber(size) {
+			return Math.floor(Math.random() * size);
+		}
+
+		//Calculate distance between click and target
+		function getDistance(event, target) {
+			let dx = event.offsetX - target.x;
+			let dy = event.offsetY - target.y;
+
+			return Math.sqrt( (dx * dx) + (dy * dy) );
+		}
+
+
+		//Get a message to represent the distance
+		function getDistanceMessage(distance) {
+			if (distance < 10){
+				return "Boiling hot!";
+			} else if (distance < 20){
+				return "Really hot!";
+			} else if (distance < 40){
+				return "Hot!";
+			} else if (distance < 80){
+				return "Warm!";
+			} else if (distance < 160){
+				return "Cold";
+			} else if (distance < 320){
+				return "Really Cold";
+			} else {
+				return "Freezing!"
+			}
+		}
+
+		let width = 400;
+		let height = 400;
+		let clicks = 0;
+		let limits = 30;
+
+		let target = {
+			x : getRandomNumber(width),
+			y : getRandomNumber(height)
+		}
+
+		$('#map').click(function (event) {
+			clicks ++;
+			limits--;
+			let distance = getDistance(event, target);
+			let message = getDistanceMessage(distance);
+
+			$('#distance').text(message);
+			$('#limit').text(`Yor limit is ${limits}.`)
+
+			if (limits === 0){
+				alert(`Game over dude, and we start again..`);
+				limits = 30;
+				clicks = 0;
+			}
+
+			if (distance < 5){
+				alert(`Found the treasure in ${clicks} clicks.`);
+				limits = 30;
+				clicks = 0;
+			};
+		});
+
+	</script>
+</body>
+</html>

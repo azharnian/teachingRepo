@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Making Thing Move</title>
+</head>
+<body>
+	<canvas id="canvas" width="800" height="800" style="background-color: grey;"></canvas>
+	<script type="text/javascript">
+		let canvas = document.getElementById("canvas");
+		let ctx = canvas.getContext("2d");
+
+		canvas.clearCanvas = function () {
+			ctx.clearRect(0, 0, this.width, canvas.height);
+		}
+
+		let squareObject = {
+			positionX : 0,
+			positionY : 0,
+			direction : 1,
+			color : "Black",
+			outlineWidth : 3,
+			outlineColor : "Black",
+			size : 20,
+			colors : ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink"],
+
+			draw : function () {
+				ctx.fillStyle = squareObject.color;
+				ctx.fillRect(this.positionX, this.positionY, this.size, this.size);
+			},
+
+			checkEdges : function () {
+				if (this.positionX > canvas.width-20){
+					return "right";
+				}
+				if (this.positionX < 0){
+					return "left";
+				}
+			},
+			changeDirectionAndColor : function () {
+				if (this.checkEdges() === "right"){
+					this.direction = -1;
+					this.color = this.colors[Math.floor(Math.random() * this.colors.length)];
+				} else if (this.checkEdges() === "left"){
+					this.direction = 1;
+					this.color = this.colors[Math.floor(Math.random() * this.colors.length)];
+				}
+			},
+			horizontalMove : function (){
+				this.positionX += this.direction;
+			}
+
+		}
+
+		setInterval( function () {
+			canvas.clearCanvas();
+			squareObject.draw();
+			squareObject.horizontalMove();
+			squareObject.changeDirectionAndColor();
+
+		}, 3)
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

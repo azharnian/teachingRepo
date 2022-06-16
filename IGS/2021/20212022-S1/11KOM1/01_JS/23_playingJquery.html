@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Playing with JQUERY</title>
+</head>
+<body>
+	<h1 id="main-heading">Hello World!</h1>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script type="text/javascript">
+		var newText = prompt("New Text Please!");
+		//document.querySelector("#main-heading").innerHTML = newText; // DOM
+		$("#main-heading").text(newText);
+
+		$("body").append("<p>I Love Javascript.</p>");
+
+		for (var i = 0; i < 3; i++){
+			var hobby = prompt("Tell me your hobbies.");
+			$("body").append(`<p>${hobby}</p>`);
+		}
+	</script>
+</body>
+</html>

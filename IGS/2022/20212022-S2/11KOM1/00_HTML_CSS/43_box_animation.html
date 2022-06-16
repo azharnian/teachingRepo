@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Box Animation</title>
+    <style media="screen">
+      .box {
+        width: 100px;
+        height: 100px;
+        background: red;
+        animation: myAnimation 4s infinite;
+        position: absolute;
+        z-index: -1;
+      }
+
+      @keyframes myAnimation {
+        0%{
+          background: red;
+          left: 0px;
+          top: 0px;
+        }
+
+        25%{
+          background: yellow;
+          left: 300px;
+          top: 0px;
+        }
+        50%{
+          background: blue;
+          left: 300px;
+          top: 300px;
+        }
+        75%{
+          background: green;
+          left: 0px;
+          top: 300px;
+        }
+        100%{
+          background: red;
+          left: 0px;
+          top: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Box Animation</h1>
+    <div class="box">
+
+    </div>
+  </body>
+</html>

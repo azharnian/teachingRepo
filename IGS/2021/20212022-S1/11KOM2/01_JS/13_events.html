@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Event JS</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		var hello = function () {
+			alert("Hello!");
+		}
+	</script>
+</head>
+<body>
+	<h1 id="main-heading">Welcome!</h1>
+	<button onclick="hello()">Click Here!</button>
+	<button>Click There!</button>
+
+	<script type="text/javascript">
+		// var headingTextElement = document.querySelector("h1").innerHTML
+		var headingTextElement = document.querySelector("#main-heading").innerHTML
+		console.log(headingTextElement)
+
+		var buttons = document.querySelectorAll("button")
+		console.log(buttons)
+		buttons[1].innerHTML = "There There..."
+
+		//built in DOM
+		//document.querySelector("#main-heading").innerHTML = "diubah"
+
+		//jquery
+		$("#main-heading").text("diubah")
+	</script>
+
+	<!--
+	querySelector -> tag element, id element, class element 
+	 -->
+</body>
+</html>

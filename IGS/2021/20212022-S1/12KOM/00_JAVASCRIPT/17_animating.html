@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Animating with Jquery</title>
+</head>
+<body>
+	<h1>Javascript is Awesome!</h1>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script type="text/javascript">
+		$("h1").fadeOut(2000);
+		var fadeInAct = function () {
+			$("h1").text("This is JQUERY script!").fadeIn(2000);
+		}
+
+		function slideUpAct (){
+			$("h1").slideUp(1000);
+		}
+
+		function slideDownAct () {
+			$("h1").slideDown(1000);
+		}
+
+		setTimeout(fadeInAct, 2000);
+		setTimeout(slideUpAct, 2000);
+		setTimeout(slideDownAct, 2000);
+
+	</script>
+</body>
+</html>

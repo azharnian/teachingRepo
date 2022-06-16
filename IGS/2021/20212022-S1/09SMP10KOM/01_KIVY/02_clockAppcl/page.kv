@@ -1,0 +1,41 @@
+<MyLabel@Label>
+	markup: True
+	font_name: "Roboto"
+	font_size: 90
+
+<MyButton@Button>
+	font_name: 'Roboto'
+	font_size: 40
+	bold: True
+
+
+
+BoxLayout:
+	orientation: "vertical"
+
+	MyLabel:
+		text: "[b]00[/b]:00:00"
+		id: time
+		
+
+	BoxLayout:
+		orientation: "horizontal"
+		height: 90
+		size_hint: (1, None)
+		padding: 20
+		spacing: 20
+
+		MyButton:
+			text: "Start"
+			id: start_stop
+			on_press: app.start_stop()
+			
+
+		MyButton:
+			text: "Reset"
+			id: reset
+			on_press: app.reset()
+
+	MyLabel:
+		text: "00:00.[size=40]00[/size]"
+		id: stopwatch

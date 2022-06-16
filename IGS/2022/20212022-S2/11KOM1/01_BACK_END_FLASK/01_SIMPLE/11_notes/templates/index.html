@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+
+{% block title %}My Notes{% endblock %}
+
+{% block main %}
+	
+	<h1>Notes</h1>
+
+	<ul>
+	{% for note in notes %}
+		<li>{{ note }}</li>
+	{% endfor %}	
+	</ul>
+
+	<form method="post">
+		<input type="text" name="note" placeholder="Put your note here." required>
+
+		<button>Add note</button>
+	</form>
+	
+
+{% endblock main %}

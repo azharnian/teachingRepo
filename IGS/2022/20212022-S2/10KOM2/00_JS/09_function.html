@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Function Javascript</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var ourFirstFunction = function() {
+			console.log("This is my first function");
+		}
+
+		ourFirstFunction();
+
+
+		var printingMultipleTimes = function(howManyTimes, whatToPrint){
+			for (var i = 0; i < howManyTimes; i++){
+				console.log(i + " " + whatToPrint);
+			}
+		}
+
+		printingMultipleTimes(3, "I Love You");
+
+		var double = function(number){
+			return number*2;
+		}
+
+		console.log(double(3) + double(10)); //26
+		var result = double(20); //40
+		console.log(result);
+
+		// shorthand , v ES6
+		function triple(number) {
+			return number*3;
+		}
+
+		console.log(triple(100)); // 300
+
+
+		//buatin function untuk menentukan perolehan mendali -: getMedal
+		//rules -> pts < 3 : Bronze, < 7 : Silver, >= 7 : Gold
+
+		function getMedal(pts){
+			if (pts < 3){
+				return "Bronze";
+			}
+			if (pts < 7){
+				return "Silver"
+			}
+			return "Gold";
+		}
+
+		console.log(getMedal(10));
+
+
+	</script>
+</body>
+</html>

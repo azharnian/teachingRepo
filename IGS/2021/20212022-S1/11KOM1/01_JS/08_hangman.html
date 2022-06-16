@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hangman!!!</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//Kumpulan kata-kata untuk ditebak (1 . Perbanyak Kata untuk ditebak minimal 10 dan pakai lowercase)
+		var words = [
+		"monkey",
+		"amazing",
+		"pancake",
+		"carrot",
+		"javascript",
+		"python"
+		];
+
+		//Ambil satu kata random dari array
+		var word = words[Math.floor(Math.random() * words.length )];
+
+		// Menyiapkan jawaban dari player
+		var answerArray = []; //["_", "_", "_", "_", "_", "_"]
+		for (var i = 0; i < word.length ; i++){
+			answerArray[i] = "_";
+			// answerArray.push("_");
+		}
+
+		var remainingLetters = word.length;
+		while (remainingLetters > 0){ // (3 Beri batas / limit menebak dan beri pesan yg sesuai)
+			alert(answerArray.join(" "));
+
+			var guess = prompt("Guess a letter, or click cancel to stop playing"); // ( 2 tidak casesensitive)
+
+			if (guess == null){
+				break;
+			} else if (guess.length !== 1) {
+				alert("Please enter a single letter!");
+			} else {
+				for (var i = 0; i < word.length ; i++) {
+					if(word[i] === guess){
+						answerArray[i] = guess;
+						remainingLetters--;
+					};
+				};
+			};
+			//akhir dari looping
+		};
+
+		// (4 Perbaiki bug untuk berhasil / gagal / batal)
+		alert(answerArray.join(" "));
+		alert("Good Job! the answer was "+word);
+
+
+	</script>
+</body>
+</html>

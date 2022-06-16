@@ -1,0 +1,75 @@
+Screen:
+	name: "dashboard"
+	MDFloatLayout:
+		id: layout0
+		md_bg_color: rgba(246, 250, 255, 255)
+		#MDToolbar:
+		#	title: "Dashboard"
+		#	md_bg_color: rgba(202, 0, 13, 255)
+		#	left_action_items: [["menu"]]
+		#	top: root.top
+
+		MDFloatLayout:
+			size_hint: 1, .33
+			pos_hint: {"center_y": .84}
+			md_bg_color: 1,1,1,1
+			MDIconButton:
+				icon: "menu"
+				theme_text_color: "Custom"
+    			text_color: rgba(202, 0, 13, 255)
+				pos_hint: {"center_x": .08, "center_y": .9}
+			MDIconButton:
+				icon: "dots-vertical"
+				theme_text_color: "Custom"
+    			text_color: rgba(202, 0, 13, 255)
+				pos_hint: {"center_x": .92, "center_y": .9}
+
+			MDLabel:
+				text: "Anas Azhar"
+				font_name: "Roboto"
+				font_size: "16sp"
+				halign: "left"
+				pos_hint: {"center_x": .55,"center_y": .8}
+				#x: root.ids.layout0.x + 35
+				color: rgba(202, 0, 13, 255)
+				bold: True
+
+			Image:
+				source: "assets/img/win.png"
+				size_hint_y: .2
+				pos_hint: {"center_x":.5, "center_y": .6}
+				canvas.before:
+					Color: 
+						rgba: rgba(202, 0, 13, 255)
+					Ellipse:
+						size: 150, 150 #sendiri ?? wkwk
+						pos: self.center_x - 75, self.center_y - 75
+
+			MDLabel:
+				text: "Anas Azhar"
+				font_name: "Roboto"
+				font_size: "12sp"
+				halign: "center"
+				pos_hint: {"center_x": .5, "center_y":.35}
+				bold: True
+
+			MDLabel:
+				text: "Setengah Setengah"
+				font_name: "Roboto"
+				font_size: "12sp"
+				halign: "center"
+				pos_hint: {"center_x": .5, "center_y":.25}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

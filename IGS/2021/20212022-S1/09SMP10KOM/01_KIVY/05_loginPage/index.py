@@ -1,0 +1,112 @@
+#:import from_hex kivy.utils.get_color_from_hex 
+
+<MyLabel@Label>:
+	markup: True
+	font_name: 'Roboto'
+	font_size: 30
+	bold: True
+
+<MyButton@Button>:
+	font_name: 'Roboto'
+	font_size: 25
+	bold: True
+
+<MyCanvas@Widget>:
+
+
+<LoginScreen@Screen>:
+	name: "LoginScreen"
+	MyCanvas:
+		name: "Canvas0"
+		BoxLayout:
+			id: box0
+			orientation: "vertical"
+			x: root.x
+			top: root.top - 200
+			width: root.width
+			height: 620
+			size_hint: (None, None)
+			#padding: 5
+			BoxLayout:
+				orientation: "vertical"
+				height: 200
+				spacing: 30
+				size_hint: (1, None)
+				MyCanvas:
+					canvas:
+						Color:
+							rgba: from_hex('#ffffff')
+						Rectangle:
+							pos: self.center_x - 100, self.center_y - 100
+							size: 200, 200
+							source: "igs.png"
+				MyLabel:
+					text: "Ignatius Global School"
+			BoxLayout:
+				orientation: "horizontal"
+				MyLabel:
+					id: error_message
+					color: 1, 0, 0, 1
+					text: ""
+					font_size: 14
+			BoxLayout:
+				orientation: "vertical"
+				height: 400
+				spacing: 20
+				size_hint: (1, None)
+				padding: 50
+				TextInput:
+					id: username_entry
+					hint_text: "Nama Pengguna"
+					write_tab: False
+					multiline: False
+				TextInput:
+					id: password_entry
+					hint_text: "Kata Sandi"
+					password: True
+					write_tab: False
+					multiline: False
+				BoxLayout:
+					orientation: "horizontal"
+					BoxLayout:
+
+					MyButton:
+						text: "Masuk"
+						#on_press: root.manager.current = 'HomeScreen'
+						on_press: app.auth()
+						background_color: 0, 0, 0, 0
+
+					BoxLayout:
+				BoxLayout:
+					orientation: "horizontal"
+					spacing: 0
+					BoxLayout:
+					MyButton:
+						text: "Belum terdaftar? daftar di sini."
+						font_size: 20
+						bold: False
+						width: 80
+						size_hint: (None, 1)
+						background_color: 0, 0, 0, 0
+						on_press: root.manager.current = 'HomeScreen'
+					BoxLayout:
+
+
+
+<HomeScreen@Screen>:
+	name: "HomeScreen"
+	BoxLayout:
+		orientation: "vertical"
+
+		MyLabel:
+			text: "Home Screen"
+
+		MyButton:
+			text: "Back"
+			on_press: root.manager.current = 'LoginScreen'
+
+
+ScreenManager:
+	current: "LoginScreen"
+	LoginScreen: 
+	HomeScreen:

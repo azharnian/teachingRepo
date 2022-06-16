@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bouncy Ball</title>
+    <style media="screen">
+      .ball {
+        position: relative;
+        width: 10rem;
+        height: 10rem;
+        background: black;
+        border-radius: 5rem;
+        animation: bounce;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease;
+
+      }
+
+      .ball:hover {
+        animation-play-state: paused;
+      }
+
+      @keyframes bounce {
+        0% {
+          left : -10%;
+          top : 40px;
+        }
+        100% {
+          left : calc(100% - 80px);
+          top: 40px;
+
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ball">
+
+    </div>
+  </body>
+</html>

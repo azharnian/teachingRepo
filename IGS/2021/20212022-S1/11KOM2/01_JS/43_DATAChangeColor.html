@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Change Color data-* attribute</title>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', () => {
+			
+			document.querySelectorAll(".color-change").forEach( button => {
+				// console.log(button);
+				button.onclick  = () => {
+					document.querySelector(".heading").style.color = button.dataset.iseng;
+				}
+			})
+				
+		})
+	</script>
+</head>
+<body>
+	<h1 class="heading">Anas Azhar</h1>
+	<button class="color-change" data-iseng="red">Red</button>
+	<button class="color-change" data-iseng="green">Green</button>
+	<button class="color-change" data-iseng="blue">Blue</button>
+</body>
+</html>

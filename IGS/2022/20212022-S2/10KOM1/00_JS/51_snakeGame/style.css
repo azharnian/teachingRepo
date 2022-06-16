@@ -1,0 +1,10 @@
+.container {
+	display: flex;
+	justify-content: center;
+}
+
+canvas {
+	margin-top: 8rem;
+	/*border: 1px solid black;*/
+	background-color: grey;
+}

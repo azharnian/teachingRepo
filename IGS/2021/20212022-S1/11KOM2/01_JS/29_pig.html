@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Object</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function sleep() {
+			console.log("Zzzzzzzzzz");
+		}
+		
+		let pig = {
+			name : "Pancake",
+			legs : 3,
+			isCute : true,
+			sleep : sleep,
+
+			eat : function () {
+				console.log(`${this.name} is still eating...`);
+			}
+		}
+
+		pig.speak = function () {
+			console.log(`Oik Oik!!!, my name is ${this.name}!`);
+		}
+
+		console.log(pig.name); // gunakan cara ini.
+		console.log(pig['legs']);
+		pig.speak();
+		pig.sleep();
+		pig.eat();
+
+	</script>
+</body>
+</html>

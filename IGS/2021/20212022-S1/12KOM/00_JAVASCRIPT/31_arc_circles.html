@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Arc</title>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="600" style="border:1px solid black;"></canvas>
+	<script type="text/javascript">
+		let canvas = document.getElementById("canvas");
+		let ctx = canvas.getContext("2d");
+
+		function circle(x, y, radius, color, isFilled) {
+			ctx.strokeStyle = color;
+			ctx.beginPath();
+			ctx.arc(x, y, radius, 0, 2*Math.PI, false); // false berlawanan kuadran atau clockwise
+			ctx.stroke();
+			if (isFilled){
+				ctx.fillStyle = color;
+				ctx.fill();
+			}
+		}
+
+		ctx.strokeStyle = "Green";
+		ctx.lineWidth = 3;
+
+		ctx.beginPath(); // x, y, r, start, finish, direction
+		ctx.arc(30, 30, 20, 0, 3*Math.PI/2, true); // PI rad = 3.14159 rad = 180 deg
+		ctx.stroke();
+
+		// buat pacman
+
+
+	</script>
+</body>
+</html>

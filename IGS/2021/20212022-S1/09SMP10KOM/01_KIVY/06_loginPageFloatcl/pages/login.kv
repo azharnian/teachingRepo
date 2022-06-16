@@ -1,0 +1,56 @@
+#:import from_hex kivy.utils.get_color_from_hex
+
+Screen:
+	name: "login"
+	#Label:
+	#	text: "Login Page"
+
+	FloatLayout:
+		Image:
+			source: "assets/img/igs.png"
+			size_hint: (0.3, 0.3)
+			pos_hint: {"center_x" : 0.5, "center_y": 0.7} #{"x": 0.5, "y":0.5}
+
+		BoxLayout:
+			orientation: "vertical"
+			size_hint: (0.85, 0.2)
+			padding: (30, 10, 30, 0) #left, top, right, bottom
+			pos_hint: {"center_x": 0.5, "center_y": 0.5}
+			Label:
+				id: err_msg
+				color: from_hex("#ff0000") # 1, 0, 0, 1
+				font_name: "Roboto"
+				font_size: 18
+				text: ""
+				bold: True
+
+			TextInput:
+				id: username_entry
+				hint_text: "Nama Pengguna"
+				multiline: False
+				write_tab: False
+
+			TextInput:
+				id: password_entry
+				hint_text: "Kata Sandi"
+				password: True
+				multiline: False
+				write_tab: False
+			
+			Button:
+				text: "Masuk"
+				font_name: 'Roboto'
+				font_size: 20
+				bold: True
+				background_color: 0,0,0,0
+				on_press: app.logger()
+
+			Button:
+				text: "Belum terdaftar? daftar di sini."
+				font_name: 'Roboto'
+				font_size: 20
+				#bold: True
+				background_color: 0,0,0,0
+
+
+

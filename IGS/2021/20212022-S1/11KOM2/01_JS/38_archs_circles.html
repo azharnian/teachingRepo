@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Archs and Circles</title>
+</head>
+<body>
+	<canvas id="canvas" width="400" height="400" style="border:1px solid black;"></canvas>
+	<script type="text/javascript">
+		let canvas = document.getElementById("canvas");
+		let ctx = canvas.getContext("2d");
+
+		function circle(x, y, radius, color) {
+			ctx.strokeStyle = color;
+			ctx.beginPath();
+			ctx.arc(x, y, radius, 0, 2*Math.PI, false);
+			ctx.stroke();
+		}
+
+		ctx.strokeStyle = "Green";
+
+		// 180 deg = pi rad -> 360 deg = 2pi rad : sudut yg terbentuk dr 
+		ctx.beginPath();
+		ctx.arc(50, 50, 20, 0, Math.PI/2, false); // 1/4 (x, r, radius, start, finish, clockwise)
+		ctx.stroke();
+
+		// 1/2 lingkarang
+		ctx.beginPath();
+		ctx.arc(100, 50, 20, 0, Math.PI, false);
+		ctx.stroke();
+
+		// 1 lingkaran
+		ctx.beginPath();
+		ctx.arc(150, 50, 20, 0, 2*Math.PI, false);
+		ctx.stroke();
+		circle(200, 50, 20, "Red");
+
+		//1 Buating function drawSnowman(x,y) x dan y adalah titik pusat
+		//2 Menggambar dengan mouse, menggunakan jQuery
+		//  mouseMove, clicks mirip aplikasi paint
+		//3 Buat game hangman, sudah ada animasi hangman yg digantung
+	</script>
+</body>
+</html>

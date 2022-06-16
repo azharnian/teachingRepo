@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Events JS</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		function hello(){
+			alert("hello!")
+		}
+	</script>
+</head>
+<body>
+	<h1 id="main-heading">Welcome</h1>
+	<button onclick="hello()">Click here!</button>
+	<button id='btn-02'>Click There!</button>
+	<script type="text/javascript">
+		var buttonTextElement = document.querySelector('#btn-02').innerHTML;
+		console.log(buttonTextElement);
+		
+		var new_heading = prompt("Please insert data : ");
+		// built-in DOM
+		document.querySelector('#main-heading').innerHTML = new_heading
+		// jquery
+		//$("#main-heading").text(new_heading);
+	</script>
+	<!-- 
+	built-in DOM
+	querySelector
+	tag element, id, class
+	 -->
+</body>
+</html>

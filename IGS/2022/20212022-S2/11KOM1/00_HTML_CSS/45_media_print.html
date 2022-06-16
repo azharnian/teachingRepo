@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Print or Not?</title>
+    <style>
+      @media print {
+        .screen-only {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p>This is a paragraph</p>
+    <p>This is another paragraph</p>
+    <p class="screen-only">
+      This is paragraph won't appear when you print this page.
+    </p>
+  </body>
+</html>

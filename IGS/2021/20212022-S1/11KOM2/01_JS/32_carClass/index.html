@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Car with Class</title>
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		
+		//Car Constructor
+		class Car { //2015 ES6 Javascript
+
+			constructor (posX, posY){
+				this.posX = posX;
+				this.posY = posY;
+				this.odometer = 0;
+
+			}
+
+			draw(){
+				let carImg = '<img src="img/car.png">';
+
+				this.carElement = $(carImg);
+
+				this.carElement.css({
+					position: "absolute",
+					left: this.posX,
+					top: this.posY
+				});
+
+				$("body").append(this.carElement);
+			}
+
+			moveRight(){
+				this.posX += 100;
+
+				this.carElement.css({
+					left: this.posX,
+					top: this.posY
+				});
+				this.odometer += 100;
+			}
+
+			moveLeft(){
+				//diisi
+			}
+
+			moveUp(){
+				//diisi
+			}
+
+			moveDown(){
+				//diisi
+			}
+		}
+
+		Car.prototype.readOdometer = function () {
+			console.log(`Car : ${this.odometer} KM.`);
+		}
+
+		let toyota = new Car(10, 20);
+		let tesla = new Car(100, 200);
+
+		// drawCar(toyota);
+		// drawCar(tesla);
+
+		toyota.draw();
+		//toyota.readOdometer();
+		toyota.moveRight();
+		toyota.moveRight();
+		toyota.readOdometer();
+		tesla.draw();
+		tesla.readOdometer();
+
+	</script>
+</body>
+</html>

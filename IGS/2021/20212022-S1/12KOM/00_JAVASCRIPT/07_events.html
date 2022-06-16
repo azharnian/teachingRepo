@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Events JS</title>
+	<script type="text/javascript">
+		function hello(){
+			var headingTextElement = document.getElementById("main-heading").innerHTML;
+			console.log(headingTextElement);
+			alert('Hello!!!');
+		}	
+	</script>
+</head>
+<body>
+<h1 id="main-heading">Welcome</h1>
+<button id="btn-1" onclick="hello()">Click Here!</button>
+<script type="text/javascript">
+	var buttonTextElement = document.getElementById("btn-1").innerHTML;
+	console.log(buttonTextElement);
+</script>
+</body>
+</html>

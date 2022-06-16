@@ -1,0 +1,26 @@
+
+ScreenManager:
+	Screen:
+		name: "Screen0"
+		BoxLayout:
+			orientation: "vertical"
+
+			Label:
+				text: "Screen 0"
+
+			Button:
+				text: "Go to Screen 1"
+				on_press: app.to_screen_1()
+
+
+	Screen:
+		name: "Screen1"
+		BoxLayout:
+			orientation: "vertical"
+
+			Label:
+				text: "Screen 1"
+
+			Button:
+				text: "Go to Screen 0"
+				on_press: app.to_screen_0()

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Car car car</title>
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		
+		//Car Constructor
+		let Car = function (posX, posY) {
+			this.posX = posX;
+			this.posY = posY;
+			this.odometer = 0;
+
+			this.draw = function () {
+				let carImg = '<img src="img/car.png">'
+
+				this.carElement = $(carImg);
+
+				this.carElement.css({
+					position : "absolute",
+					left : this.posX,
+					top : this.posY
+				});
+
+				$("body").append(this.carElement);
+			}
+		}
+
+		Car.prototype.readOdometer = function () {
+			console.log(`Car : ${this.odometer} KM.`);
+		}
+
+/*
+		function drawCar(car) {
+			let carImg = '<img src="img/car.png">'
+
+			let carElement = $(carImg);
+
+			carElement.css({
+				position : "absolute",
+				left : car.posX,
+				top : car.posY
+			});
+
+			$("body").append(carElement);
+		}
+*/
+
+		let toyota = new Car(10, 20);
+		let tesla = new Car(100, 200);
+
+		// drawCar(toyota);
+		// drawCar(tesla);
+
+		toyota.draw();
+		toyota.readOdometer();
+		tesla.draw();
+		tesla.readOdometer();
+
+	</script>
+</body>
+</html>

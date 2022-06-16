@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Animating JQUERY</title>
+</head>
+<body>
+	<h1>Javascript is Awesome!</h1>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		//$("h1").fadeOut(3000).fadeIn(3000).slideUp(3000).slideDown(3000);
+
+		// 1. h1 menghilang
+		// 2. ubah text di h1 menjadi text lain
+		// 3. h1 muncul kembali
+
+		function toMilisecond (second){
+			return second * 1000;
+		}
+
+		var changeText = function (){
+			$("h1").text("I Love Jquery!!!");
+		}
+
+		function slideTextUp (){
+			$("h1").slideUp(toMilisecond(2));
+		}
+
+		$("h1").fadeOut(3000);// barengan 0 1 2 3
+
+		setTimeout(changeText, 3000); // barengan -3s
+		
+		$("h1").fadeIn(3000);
+
+		setTimeout(slideTextUp, 2000);
+		setTimeout(function(){
+			$("h1").slideDown(2000);
+		}, 2000);
+
+
+	</script>
+</body>
+</html>

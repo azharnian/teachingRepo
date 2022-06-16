@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Basic Changing Color</title>
+</head>
+<body>
+	<canvas width="400" height="400" id="canvas" style="background-color: grey;"></canvas>
+	<script type="text/javascript">
+		let canvas = document.getElementById("canvas");
+		let ctx = canvas.getContext("2d");
+
+		ctx.fillStyle = "Red";
+		ctx.fillRect(20, 20, 100, 100);
+
+		ctx.strokeStyle = "Blue";
+		ctx.strokeRect(20, 20, 100, 100);
+
+
+		ctx.fillStyle = "Green";
+		ctx.fillRect(100, 100, 100, 100);
+
+		ctx.strokeStyle = "Yellow";
+		ctx.lineWidth = 3;
+		ctx.strokeRect(100, 100, 100, 100);
+		
+	</script>
+</body>
+</html>

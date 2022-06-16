@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Car Object With Constructor</title>
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		
+		// car constructor
+		let Car = function (name, x, y){
+			this.name = name;
+			this.x = x;
+			this.y = y;
+			this.odometer = 0;
+
+			this.draw = function () {
+				let image = '<img src="img/car.png">';
+
+				this.carElement = $(image);
+
+				this.carElement.css({
+					position: "absolute",
+					left: this.x,
+					top: this.y
+				});
+
+				$("body").append(this.carElement);
+			};
+
+
+		}
+
+		Car.prototype.readOdometer = function () {
+			console.log(`Your ${this.name} miles : ${this.odometer}`);
+		}
+
+		let toyota = new Car("toyota", 10, 20);
+		let hyundai = new Car("hyundai", 100, 200);
+
+		toyota.draw();
+		toyota.readOdometer();
+		hyundai.draw();
+		hyundai.readOdometer();
+
+	</script>
+</body>
+</html>

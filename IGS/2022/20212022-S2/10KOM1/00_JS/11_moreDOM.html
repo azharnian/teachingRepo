@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>More DOM</title>
+</head>
+<body>
+	<h1 id="main-heading">Welcome</h1>
+	<!-- br break -->
+	<button id="button0">Button 0</button><br> 
+	<button>Button 1</button><br>
+	<button>Button 2</button>
+
+	<script type="text/javascript">
+		// dengan querySelector kita bisa akses element HTML dengan tag elementnya / id elementnya / class elemennya
+		var textHeading = document.querySelector("#main-heading").innerHTML;
+		console.log(textHeading);
+
+		var textButton = document.querySelector("button").innerHTML;
+		console.log(textButton);
+
+		var buttons = document.querySelectorAll("button");
+
+		var textButton1 = buttons[1].innerHTML;
+		console.log(textButton1);
+
+		buttons[2].innerHTML = "Button 2 Updated";
+	</script>
+	
+</body>
+</html>

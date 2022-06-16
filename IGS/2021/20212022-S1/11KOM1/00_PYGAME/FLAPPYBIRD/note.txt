@@ -1,0 +1,13 @@
+
+-> merancang model (object)
+-> model game
+	- bird (v) > (sendiri)
+	- pipe (v) > rame (2 - sprite group)
+	- platform / land (v) (2 - sprite group)
+	- awan (sprite)
+	- batu (sprite)
+-> model config
+	- screen (background img)
+	- settings
+	- game_statistics
+	- scoreboard
