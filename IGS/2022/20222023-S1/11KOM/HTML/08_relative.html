@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=Re, initial-scale=1.0">
+    <title>Relative Position</title>
+    <style>
+        body {
+            width: auto;
+            height: 1vh;
+        }
+
+        nav {
+            width: 100%;
+            height: 30px;
+            background-color: gray;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+        div.red {
+            position: relative;
+            background-color: red;
+            left: 100px;
+            top: 200px;
+        }
+        div.green {
+            position: absolute;
+            background-color: green;
+            left: 50%;
+            top: 50%;
+        }
+        div.blue {
+            position: fixed;
+            background-color: blue;
+            left: 50%;
+            top: 50%;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav></nav>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+</body>
+</html>
