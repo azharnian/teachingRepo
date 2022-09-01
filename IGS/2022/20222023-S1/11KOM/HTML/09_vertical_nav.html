@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Navigation</title>
+    <style>
+        body {
+            font : 12pt Helvetica, sans-serif;
+        }
+        nav {
+            width: 150px;
+            float: left;
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li{
+            border-bottom: 1px solid black;
+        }
+
+        nav ul li a{
+            text-decoration: none;
+        }
+
+        nav ul li a:link, nav ul li a:visited {
+            display: block;
+            background-color: cadetblue;
+            color: white;
+            font-weight: bold;
+            font-size: 10pt;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+
+        nav ul li a:hover, nav ul li a:active {
+            display: block;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            font-size: 10pt;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+
+        nav ul ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        nav ul ul li a{
+            padding-left: 20px;
+        }
+
+        section.main {
+            width: 800px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+			<li><a href="#">Mission</a></li>
+			<li><a href="#">History</a></li>
+			<li><a href="#">Executive Team</a></li>
+				<ul>
+					<li><a href="#">&raquo; CEO</a></li>
+					<li><a href="#">&raquo; CFO</a></li>
+					<li><a href="#">&raquo; COO</a></li>
+					<li><a href="#">&raquo; Other</a></li>
+				</ul>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+    </nav>
+    <section class="main">
+        <header>
+            <h1>About Us</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, soluta. Iure vitae laborum dolore iusto aliquam praesentium alias vel minima, ex atque dolorum! Quidem fugiat laborum exercitationem mollitia quia dolore saepe asperiores veniam! Dolores consectetur iste exercitationem repellat voluptatum alias, eius perferendis aliquam quam autem at voluptate a itaque qui.
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        <a href="#">Mission</a>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aliquid dolorem explicabo ullam incidunt, harum possimus nulla reiciendis excepturi qui maiores ut omnis sed molestiae inventore, facilis, voluptates recusandae ratione?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="#">History</a>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aliquid dolorem explicabo ullam incidunt, harum possimus nulla reiciendis excepturi qui maiores ut omnis sed molestiae inventore, facilis, voluptates recusandae ratione?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="#">Executive</a>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aliquid dolorem explicabo ullam incidunt, harum possimus nulla reiciendis excepturi qui maiores ut omnis sed molestiae inventore, facilis, voluptates recusandae ratione?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="#">Contact Us</a>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aliquid dolorem explicabo ullam incidunt, harum possimus nulla reiciendis excepturi qui maiores ut omnis sed molestiae inventore, facilis, voluptates recusandae ratione?
+                    </p>
+                </li>
+            </ul>
+        </header>
+    </section>
+</body>
+</html>

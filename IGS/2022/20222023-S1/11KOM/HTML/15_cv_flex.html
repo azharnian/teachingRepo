@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Flex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+        }
+        header {
+            font-family: 'Aboreto', cursive;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(198, 198, 198);
+            width: 100%;
+        }
+        header h1 {
+            text-align: center;
+            color: orangered;
+            
+        }
+        header ul li {
+            display: inline;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            background-color: rgb(65, 65, 65);
+        }
+
+        header ul li a{
+            text-decoration: none;
+            color: white;
+        }
+
+        header ul li a:hover {
+            color: orangered;
+        }
+        section {
+            display: flex;
+            flex-direction: row;
+            font-family: 'Poppins', sans-serif;
+        }
+        aside.left {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            width: 33%;
+            background-color: orange;
+            color: white;
+        }
+
+        aside img {
+            /* text-align: center; */
+            /* display: flex; */
+            /* justify-content: center; */
+            padding-left: 115px;
+            width: 200px;
+        }
+        article {
+            width: 66%;
+            float: right;
+            background-color: rgb(255, 203, 106);
+        }
+
+        footer {
+            text-align: center;
+            background-color: gray;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Anas Azhar's CV</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Certificate</a></li>
+                <li><a href="#">Achivement</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <section class="main">
+        <aside class="left">
+            <img src="https://cdn.discordapp.com/attachments/867712003496738816/1010123175293624341/twitter-logo.jpeg" alt="Profile">
+            <p>Anas Azhar</p>
+            <p>28</p>
+            <p>Undefined</p>
+        </aside>
+        <article>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi, pariatur voluptatem! Praesentium aut veritatis ea modi illum consequuntur laudantium porro alias aliquid saepe excepturi sit impedit voluptates recusandae commodi ipsam rem nisi ad temporibus quam expedita veniam reprehenderit, fuga eius. Voluptatum nostrum illo, expedita perferendis illum vel similique officiis minus nisi itaque dolores voluptates explicabo quasi cupiditate! Possimus dolores dolor vero autem quae eveniet maiores mollitia dolore pariatur. Velit exercitationem nesciunt illo aliquid, necessitatibus, libero dolores accusamus repellat impedit amet aut ea reprehenderit ipsam enim dolorem porro animi ut. Expedita dolores minima minus porro laborum similique magnam ad iusto tempore?</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ipsa beatae dicta vel placeat velit cumque pariatur vitae architecto tenetur et totam, tempore voluptate. Suscipit iste numquam ducimus eum, optio voluptatibus, voluptatem facilis beatae sit dolores laudantium, pariatur deserunt repellendus labore aspernatur eos eligendi porro sint non nam tempore? Quibusdam.</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, ex!</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quos quod harum itaque iusto doloremque id nam consequuntur aspernatur accusantium!</p>
+        </article>
+    </section>
+    <footer>
+        COPYRIGHT
+    </footer>
+</body>
+</html>
